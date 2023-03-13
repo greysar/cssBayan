@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@keyframes show {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: auto;
+    }
+}
+
+body {
+    user-select: none;
+    font-family: 'Fredoka One', cursive;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.bayan__wrapper {}
+
+.bayan__item {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #000;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.bayan__item input {
+    display: none;
+    transition: 0.3s;
+}
+
+.bayan__content {
+    display: none;
+}
+
+.bayan__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.bayan__content {
+    padding: 10px 15px;
+}
+
+.bayan__item input:checked+.bayan__title {
+    background: black;
+    color: #fff;
+}
+
+.bayan__item input:checked~.bayan__content {
+    display: block;
+    animation: show;
+}
+
+@media (hover:hover) {
+
+    .container:hover,
+    .bayan__title:hover {
+        cursor: pointer;
+    }
+
+    .container:hover .bayan__title::after {
+        content: '+';
+    }
+
+    .container:hover .bayan__item input:checked+.bayan__title::after {
+        content: '-';
+    }
+}
