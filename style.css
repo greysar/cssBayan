@@ -1,85 +1,98 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @keyframes show {
-    0% {
-        height: 0;
-    }
+  0% {
+    transform: translateY(-200%);
+  }
 
-    100% {
-        height: auto;
-    }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes out {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-200%);
+  }
 }
 
 body {
-    user-select: none;
-    font-family: 'Fredoka One', cursive;
+  user-select: none;
+  font-family: 'Fredoka One', cursive;
 }
 
 .container {
-    width: 1280px;
-    margin: 0 auto;
-    transition: 0.3s;
+  width: 1280px;
+  margin: 0 auto;
 }
 
 .bayan__wrapper {}
 
 .bayan__item {
-    background-color: blanchedalmond;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    color: #000;
-    overflow: hidden;
-    transition: 1s;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #000;
+  overflow: hidden;
 }
 
 .bayan__item input {
-    display: none;
-    transition: 0.3s;
+  display: none;
 }
 
 .bayan__content {
-    display: none;
+  height: 400px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: show 0.3s;
+  background-color: blanchedalmond;
+  padding: 10px 15px;
+  transition: 0.3s;
 }
 
 .bayan__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    position: relative;
-    transition: 0.3s;
-}
-
-.bayan__content {
-    padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: blanchedalmond;
 }
 
 .bayan__item input:checked+.bayan__title {
-    background: black;
-    color: #fff;
+  background: black;
+  transition: 0.5s;
+  color: #fff;
 }
 
 .bayan__item input:checked~.bayan__content {
-    display: block;
-    animation: show;
+  display: flex;
+}
+
+.bayan__image {
+  width: auto;
+  height: 100%;
 }
 
 @media (hover:hover) {
 
-    .container:hover,
-    .bayan__title:hover {
-        cursor: pointer;
-    }
+  .container:hover,
+  .bayan__title:hover {
+    cursor: pointer;
+  }
 
-    .container:hover .bayan__title::after {
-        content: '+';
-    }
+  .container:hover .bayan__title::after {
+    content: '+';
+  }
 
-    .container:hover .bayan__item input:checked+.bayan__title::after {
-        content: '-';
-    }
+  .container:hover .bayan__item input:checked+.bayan__title::after {
+    content: '-';
+  }
 }
