@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 *,
 *::before,
 *::after {
@@ -14,7 +18,7 @@
   }
 }
 
-@keyframes out {
+@keyframes close {
   0% {
     transform: translateY(0%);
   }
@@ -30,15 +34,15 @@ body {
 }
 
 .container {
-  width: 1280px;
+  width: 80rem;
   margin: 0 auto;
 }
 
 .bayan__wrapper {}
 
 .bayan__item {
-  border-radius: 10px;
-  margin-bottom: 10px;
+  border-radius: 0.625rem;
+  margin-bottom: 0.625rem;
   color: #000;
   overflow: hidden;
 }
@@ -48,22 +52,27 @@ body {
 }
 
 .bayan__content {
-  height: 400px;
+  height: 25rem;
   display: none;
   justify-content: center;
   align-items: center;
-  animation: show 0.3s;
+  animation: close 0.3s;
   background-color: blanchedalmond;
-  padding: 10px 15px;
-  transition: 0.3s;
+  padding: 0.625rem 0.9375rem;
+  transition: 0.5s;
 }
 
 .bayan__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   background-color: blanchedalmond;
+  transition: 0.5s;
+}
+
+.bayan__title:hover {
+  background: rgba(255, 0, 0, 0.5);
 }
 
 .bayan__item input:checked+.bayan__title {
@@ -72,13 +81,37 @@ body {
   color: #fff;
 }
 
+.bayan__item input:checked+.bayan__title:hover {
+  background-color: rgba(54, 0, 0, 0.815);
+  transition: 0.3s;
+  color: #fff;
+}
+
+.bayan__content:hover {
+  background-color: rgba(255, 0, 0, 0.205);
+  transition: 0.5s;
+  color: #fff;
+}
+
+.bayan__content:hover .bayan__title {
+  background-color: rgba(54, 0, 0, 0.815);
+  transition: 0.3s;
+  color: #fff;
+}
+
 .bayan__item input:checked~.bayan__content {
   display: flex;
+  animation: show 0.3s;
+  transition: 0.3s;
 }
 
 .bayan__image {
   width: auto;
   height: 100%;
+}
+
+.bayan_checkbox {
+  transition: 0.7s;
 }
 
 @media (hover:hover) {
