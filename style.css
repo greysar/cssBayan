@@ -116,14 +116,14 @@ body {
   .bayan__item input:not(.bayan__item input:checked)+.bayan__title:hover+.bayan__content {
     display: flex;
     height: 5rem;
-    animation: show-small-image 0.5s;
+    animation: show-small-image 0.2s;
   }
 
-  .bayan__item input:not(.bayan__item input:checked)~.bayan__content:hover {
+  /* .bayan__item input:not(.bayan__item input:checked)~.bayan__content:hover {
     display: flex;
     height: 5rem;
     animation: none;
-  }
+  } */
 
   .bayan__content:hover+.bayan__title {
     display: none
